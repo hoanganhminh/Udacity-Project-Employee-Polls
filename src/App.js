@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { handleInitialData } from './actions/shared';
 import Nav from './components/Nav';
@@ -18,20 +18,18 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router>
-      <div className="container">
-        <Nav />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/leaderboard" element={<LeaderboardPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/add" element={<NewPollPage />} />
-          <Route path="/questions/:question_id" element={<PollPage />} />
-          <Route path="/not-found" element={<NotFound />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="container">
+      <Nav />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/add" element={<NewPollPage />} />
+        <Route path="/questions/:question_id" element={<PollPage />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
   );
 }
 

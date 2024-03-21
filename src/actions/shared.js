@@ -3,8 +3,7 @@ import { receiveUsers } from './users';
 import { receiveQuestions } from './questions';
 import { setAuthedUser } from './authedUser';
 
-const AUTHED_ID = null; // Set default authedUser ID here if needed
-
+const AUTHED_ID = null;
 export function handleInitialData() {
     return (dispatch) => {
         return Promise.all([
