@@ -1,27 +1,27 @@
-export const RECEIVE_USERS = 'RECEIVE_USERS';
-export const ADD_USER_QUESTION = 'ADD_USER_QUESTION';
-export const ADD_USER_ANSWER = 'ADD_USER_ANSWER';
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const UPDATE_USERS_ANSWERS = "UPDATE_USERS_ANSWERS";
+export const UPDATE_USERS_QUESTIONS = "UPDATE_USERS_QUESTIONS";
 
 export function receiveUsers(users) {
-    return {
-        type: RECEIVE_USERS,
-        users,
-    };
+  return {
+    type: RECEIVE_USERS,
+    users,
+  };
 }
 
-export function addUserQuestion(authedUser, qid) {
-    return {
-        type: ADD_USER_QUESTION,
-        authedUser,
-        qid,
-    };
+export function updateUsersAnswers({ authedUser, qid, answer }) {
+  return {
+    type: UPDATE_USERS_ANSWERS,
+    authedUser,
+    qid,
+    answer,
+  };
 }
 
-export function addUserAnswer(authedUser, qid, answer) {
-    return {
-        type: ADD_USER_ANSWER,
-        authedUser,
-        qid,
-        answer,
-    };
+export function updateUsersQuestions(question) {
+  return {
+    type: UPDATE_USERS_QUESTIONS,
+    authedUser: question.author,
+    id: question.id,
+  };
 }
