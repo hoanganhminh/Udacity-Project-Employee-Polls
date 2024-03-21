@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+// components/LoginForm.js
 
-const LoginForm = ({ users, onLogin }) => {
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../actions/authedUser';
+
+const LoginForm = () => {
+    const dispatch = useDispatch();
+    const users = useSelector(state => state.users);
     const [selectedUser, setSelectedUser] = useState('');
 
     const handleLogin = () => {
         if (selectedUser !== '') {
-            onLogin(selectedUser);
+            dispatch(loginUser(selectedUser));
         }
     };
 
