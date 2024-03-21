@@ -2,12 +2,14 @@ import React from 'react';
 
 const Nav = ({ user, onLogout }) => {
     return (
-        <div>
-            {user && user.name && (
-                <p>Welcome, {user.name}!</p>
-            )}
-            <button onClick={onLogout}>Logout</button>
-        </div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container">
+                {user && user.name && (
+                    <p className="navbar-text me-auto">Welcome, {user.name}!</p>
+                )}
+                <button className="btn btn-outline-danger" onClick={onLogout}>Logout</button>
+            </div>
+        </nav>
     );
 }
 
