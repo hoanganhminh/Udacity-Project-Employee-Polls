@@ -11,7 +11,7 @@ const PollPage = ({ poll, user, onVote }) => {
 
     return (
         <div>
-            <h1>Poll</h1>
+            <h1 className="display-4">Poll</h1>
             {poll && (
                 <PollDetails
                     poll={poll}

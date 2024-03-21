@@ -4,7 +4,7 @@ import NewPollForm from '../components/NewPollForm';
 const NewPollPage = ({ onSubmit }) => {
     return (
         <div>
-            <h1>New Poll</h1>
+            <h1 className="display-4">New Poll</h1>
             <NewPollForm onSubmit={onSubmit} />
         </div>
     );

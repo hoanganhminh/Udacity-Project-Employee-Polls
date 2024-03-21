@@ -4,7 +4,7 @@ import Leaderboard from '../components/Leaderboard';
 const LeaderboardPage = ({ users }) => {
     return (
         <div>
-            <h1>Leaderboard</h1>
+            <h1 className="display-4">Leaderboard</h1>
             <Leaderboard users={users} />
         </div>
     );

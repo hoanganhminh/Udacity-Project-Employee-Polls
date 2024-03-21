@@ -2,7 +2,7 @@ import React from 'react';
 import Poll from './Poll';
 
 const PollList = ({ polls, onSelect }) => {
-    if (!polls || !Array.isArray(polls)) {
+    if (!polls || !Array.isArray(polls) || polls.length === 0) {
         return <div>No polls available</div>;
     }
 

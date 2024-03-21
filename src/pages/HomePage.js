@@ -4,7 +4,7 @@ import PollList from '../components/PollList';
 const HomePage = ({ polls, onSelect }) => {
     return (
         <div>
-            <h1>Home</h1>
+            <h1 className="display-4">Home</h1>
             <PollList polls={polls} onSelect={onSelect} />
         </div>
     );
