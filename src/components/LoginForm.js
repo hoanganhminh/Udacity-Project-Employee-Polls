@@ -1,17 +1,18 @@
-// components/LoginForm.js
-
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../actions/authedUser';
+import { setAuthedUser } from '../actions/authedUser';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const dispatch = useDispatch();
     const users = useSelector(state => state.users);
     const [selectedUser, setSelectedUser] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = () => {
         if (selectedUser !== '') {
-            dispatch(loginUser(selectedUser));
+            dispatch(setAuthedUser(selectedUser));
+            navigate('/');
         }
     };
 
