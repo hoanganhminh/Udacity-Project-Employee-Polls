@@ -115,20 +115,26 @@ let questions = {
     },
 }
 
-function generateUID() {
+export function generateUID() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
 export function _getUsers() {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         setTimeout(() => res({ ...users }), 1000)
     })
 }
 
 export function _getQuestions() {
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         setTimeout(() => res({ ...questions }), 1000)
     })
+}
+
+export function _getInitialData() {
+    return Promise.all([_getUsers(), _getQuestions()]).then(
+        ([users, questions]) => ({ users, questions })
+    )
 }
 
 function formatQuestion({ optionOneText, optionTwoText, author }) {
@@ -149,21 +155,16 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
 
 export function _saveQuestion(question) {
     return new Promise((res, rej) => {
-        const authedUser = question.author;
+        if (!question.optionOneText || !question.optionTwoText || !question.author) {
+            rej("OptionOneText, optionTwoText or author are not provided!")
+        }
+
         const formattedQuestion = formatQuestion(question)
 
         setTimeout(() => {
             questions = {
                 ...questions,
                 [formattedQuestion.id]: formattedQuestion
-            }
-
-            users = {
-                ...users,
-                [authedUser]: {
-                    ...users[authedUser],
-                    questions: users[authedUser].questions.concat([formattedQuestion.id])
-                }
             }
 
             res(formattedQuestion)
@@ -173,6 +174,10 @@ export function _saveQuestion(question) {
 
 export function _saveQuestionAnswer({ authedUser, qid, answer }) {
     return new Promise((res, rej) => {
+        if (!authedUser || !qid || !answer) {
+            rej("AuthedUser, qid or answer are not provided!")
+        }
+
         setTimeout(() => {
             users = {
                 ...users,
@@ -196,7 +201,7 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
                 }
             }
 
-            res()
+            res({ users, questions })
         }, 500)
     })
 }
