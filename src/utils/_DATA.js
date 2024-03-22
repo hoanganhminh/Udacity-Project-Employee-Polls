@@ -115,26 +115,29 @@ let questions = {
     },
 }
 
-export function generateUID() {
+function generateUID() {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 }
 
 export function _getUsers() {
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
         setTimeout(() => res({ ...users }), 1000)
     })
 }
 
 export function _getQuestions() {
-    return new Promise((res) => {
+    return new Promise((res, rej) => {
         setTimeout(() => res({ ...questions }), 1000)
     })
 }
 
 export function _getInitialData() {
     return Promise.all([_getUsers(), _getQuestions()]).then(
-        ([users, questions]) => ({ users, questions })
-    )
+        ([users, questions]) => ({
+            users,
+            questions,
+        })
+    );
 }
 
 function formatQuestion({ optionOneText, optionTwoText, author }) {
@@ -155,10 +158,7 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
 
 export function _saveQuestion(question) {
     return new Promise((res, rej) => {
-        if (!question.optionOneText || !question.optionTwoText || !question.author) {
-            rej("OptionOneText, optionTwoText or author are not provided!")
-        }
-
+        const authedUser = question.author;
         const formattedQuestion = formatQuestion(question)
 
         setTimeout(() => {
@@ -174,10 +174,6 @@ export function _saveQuestion(question) {
 
 export function _saveQuestionAnswer({ authedUser, qid, answer }) {
     return new Promise((res, rej) => {
-        if (!authedUser || !qid || !answer) {
-            rej("AuthedUser, qid or answer are not provided!")
-        }
-
         setTimeout(() => {
             users = {
                 ...users,
@@ -201,7 +197,7 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
                 }
             }
 
-            res({ users, questions })
+            res()
         }, 500)
     })
 }

@@ -1,5 +1,3 @@
-// combine reducers
-
 import { combineReducers } from "redux";
 import { loadingBarReducer } from "react-redux-loading-bar";
 
@@ -13,4 +11,3 @@ export default combineReducers({
   questions,
   loadingBar: loadingBarReducer,
 });
-// so we will have one single state object

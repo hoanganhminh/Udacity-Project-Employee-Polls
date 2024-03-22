@@ -1,15 +1,29 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import UnansweredPoll from './UnansweredPoll';
+import AnsweredPoll from './AnsweredPoll';
 
-const Poll = ({ poll, onSelect }) => {
-    return (
-        <div className="card">
-            <div className="card-body">
-                <h3 className="card-title">Would You Rather</h3>
-                <p className="card-text">{poll.optionOne.text} or {poll.optionTwo.text}?</p>
-                <button onClick={() => onSelect(poll.id)} className="btn btn-primary">View Poll</button>
-            </div>
-        </div>
-    );
-}
+const Poll = (props) => {
+	const { id, authedUser, questions } = props;
+	const poll = questions[id];
 
-export default Poll;
+	if (!poll) {
+		return null;
+	}
+
+	const answeredByUser =
+		poll.optionOne.votes.includes(authedUser) ||
+		poll.optionTwo.votes.includes(authedUser);
+
+	return answeredByUser ? (
+		<AnsweredPoll poll={poll} />
+	) : (
+		<UnansweredPoll poll={poll} />
+	);
+};
+
+const mapStateToProps = ({ authedUser, questions }) => ({
+	authedUser,
+	questions,
+});
+
+export default connect(mapStateToProps)(Poll);

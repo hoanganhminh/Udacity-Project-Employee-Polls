@@ -13,7 +13,6 @@ export function receiveQuestions(questions) {
   };
 }
 
-// "handle" => for async
 export function handleAnswerQuestion({ authedUser, qid, answer }) {
   return (dispatch) => {
     dispatch(showLoading());

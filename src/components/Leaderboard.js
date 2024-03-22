@@ -1,23 +1,36 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import BoardEntry from './BoardEntry';
 
-const Leaderboard = ({ users }) => {
-    return (
-        <div>
-            <h2>Leaderboard</h2>
-            <ul className="list-group">
-                {users.map(user => (
-                    <li key={user.id} className="list-group-item d-flex align-items-center">
-                        <img src={user.avatarURL} alt={user.name} className="avatar me-3" />
-                        <div>
-                            <h3>{user.name}</h3>
-                            <p>Questions Asked: {user.questions.length}</p>
-                            <p>Questions Answered: {Object.keys(user.answers).length}</p>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-}
+const Leaderboard = (props) => {
+	const { users } = props;
 
-export default Leaderboard;
+	return (
+		<div>
+			<h1 className="mb-4">Leaderboard</h1>
+			{users.map((user) => (
+				<BoardEntry
+					key={user.id}
+					name={user.name}
+					avatar={user.avatarURL}
+					numQanswered={Object.keys(user.answers).length}
+					numQasked={user.questions.length}
+				/>
+			))}
+		</div>
+	);
+};
+
+const mapStateToProps = ({ users }) => {
+	const sortedUsers = Object.values(users).sort(
+		(a, b) =>
+			Object.keys(b.answers).length +
+			b.questions.length -
+			(Object.keys(a.answers).length + a.questions.length)
+	);
+
+	return {
+		users: sortedUsers,
+	};
+};
+
+export default connect(mapStateToProps)(Leaderboard);
