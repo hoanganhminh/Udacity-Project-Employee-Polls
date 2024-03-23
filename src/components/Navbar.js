@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import Navlinks from './Navlinks'
 import User from './User'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +14,23 @@ const Navbar = (props) => {
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent"	>
-					<Navlinks />
+					<ul className="navbar-nav mr-auto">
+						<li className="nav-item">
+							<Link className="nav-link" to="/">
+								Dashboard
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/leaderboard">
+								Leaderboard
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/add">
+								New
+							</Link>
+						</li>
+					</ul>
 					{!props.loading && <User />}
 				</div>
 			</div>

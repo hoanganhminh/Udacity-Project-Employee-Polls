@@ -6,13 +6,7 @@ const BoardEntry = (props) => {
 			<div className="card-body">
 				<div className="d-flex justify-content-between align-items-center">
 					<div className="d-flex align-items-center">
-						<img
-							src={avatar}
-							alt={`${name.toLowerCase()} avatar`}
-							width="40"
-							height="40"
-							className="me-3"
-						/>
+						<img src={avatar} alt={`${name.toLowerCase()} avatar`} width="40" height="40" className="me-3" />
 						<p className="mb-0">{name}</p>
 					</div>
 					<div>
