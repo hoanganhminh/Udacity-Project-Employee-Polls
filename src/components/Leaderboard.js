@@ -6,7 +6,7 @@ const Leaderboard = (props) => {
 
 	return (
 		<div>
-			<h1 className="mb-4">Leaderboard</h1>
+			<h1 class="mb-4">Leaderboard</h1>
 			{users.map((user) => (
 				<BoardEntry
 					key={user.id}

@@ -13,23 +13,17 @@ const User = (props) => {
 	}
 
 	return (
-		<div>
-			<img
-				src={avatarURL}
-				alt={`${name.toLowerCase()} avatar`}
-				width="35"
-				height="35"
-				className="rounded-circle me-2"
-			/>
-			<button
-				data-testid="test-logout"
-				className="btn btn-outline-primary btn-sm"
-				onClick={logout}
-			>
-				Logout
-			</button>
-			<div className="user-name">{name}</div>
-		</div>
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					{name}
+					<img src={avatarURL} alt={`${name.toLowerCase()} avatar`} width="40" height="40" class="rounded-circle ml-2" />
+				</a>
+				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" onClick={logout}>Logout</a>
+				</div>
+			</li>
+		</ul>
 	)
 }
 

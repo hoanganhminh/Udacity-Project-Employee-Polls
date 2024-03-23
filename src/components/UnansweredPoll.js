@@ -21,37 +21,31 @@ const UnansweredPoll = (props) => {
   };
 
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Would you rather...</h5>
-        <div className="radiobuttons" onChange={chooseOption}>
-          <div className="form-check">
-            <input
-              type="radio"
-              className="form-check-input"
-              id={`optionOne_${id}`}
-              name={`options_${id}`}
-              value="optionOne"
-            />
-            <label className="form-check-label" htmlFor={`optionOne_${id}`}>
-              {optionOne.text}
-            </label>
-          </div>
-          <div className="form-check">
-            <input
-              type="radio"
-              className="form-check-input"
-              id={`optionTwo_${id}`}
-              name={`options_${id}`}
-              value="optionTwo"
-            />
-            <label className="form-check-label" htmlFor={`optionTwo_${id}`}>
-              {optionTwo.text}
-            </label>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-10">
+          <div class="card-body">
+            <h5 class="card-title">Would you rather...</h5>
+            <div class="radiobuttons" onChange={chooseOption}>
+              <div class="form-check">
+                <input type="radio" className="form-check-input" id={`optionOne_${id}`} name={`options_${id}`} value="optionOne" />
+                <label className="form-check-label" htmlFor={`optionOne_${id}`}>
+                  {optionOne.text}
+                </label>
+              </div>
+              <div className="form-check">
+                <input type="radio" className="form-check-input" id={`optionTwo_${id}`} name={`options_${id}`} value="optionTwo" />
+                <label className="form-check-label" htmlFor={`optionTwo_${id}`}>
+                  {optionTwo.text}
+                </label>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="col-md-2 align-self-center">
+          <Author name={name} date={date} avatar={avatar} />
+        </div>
       </div>
-      <Author name={name} date={date} avatar={avatar} />
     </div>
   );
 };

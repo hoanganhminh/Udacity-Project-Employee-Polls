@@ -17,27 +17,33 @@ const AnsweredPoll = (props) => {
   const userChoseOptionTwo = optionTwo.votes.includes(authedUser);
 
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Would you rather...</h5>
-        <p className="card-text">
-          <span>{optionOne.text}</span> or{' '}
-          <span>{optionTwo.text}?</span>
-        </p>
-        <p className="card-text">
-          My answer:{' '}
-          {userChoseOptionOne
-            ? optionOne.text
-            : userChoseOptionTwo
-              ? optionTwo.text
-              : 'None'}
-        </p>
-        <p className="card-text">
-          Votes: {optionsSum} ({optionOneNum} for {optionOne.text} -{' '}
-          {Math.round((optionOneNum / optionsSum) * 100)}%, {optionTwoNum} for {optionTwo.text} - {Math.round((optionTwoNum / optionsSum) * 100)}%)
-        </p>
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-10">
+          <div className="card-body">
+            <h5 className="card-title">Would you rather...</h5>
+            <p className="card-text">
+              <span>{optionOne.text}</span> or{' '}
+              <span>{optionTwo.text}?</span>
+            </p>
+            <p className="card-text">
+              My answer:{' '}
+              {
+                userChoseOptionOne
+                  ? optionOne.text : userChoseOptionTwo
+                    ? optionTwo.text : 'None'
+              }
+            </p>
+            <p className="card-text">
+              Votes: {optionsSum} ({optionOneNum} for {optionOne.text} -{' '}
+              {Math.round((optionOneNum / optionsSum) * 100)}%, {optionTwoNum} for {optionTwo.text} - {Math.round((optionTwoNum / optionsSum) * 100)}%)
+            </p>
+          </div>
+        </div>
+        <div class="col-md-2 align-self-center">
+          <Author name={name} date={date} avatar={avatar} />
+        </div>
       </div>
-      <Author name={name} date={date} avatar={avatar} />
     </div>
   );
 };

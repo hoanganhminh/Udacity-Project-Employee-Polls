@@ -30,14 +30,11 @@ const Dashboard = (props) => {
 
 	return (
 		<div>
-			<h1>Dashboard</h1>
-
-			<button className={active ? 'btn btn-primary active' : 'btn btn-primary'} onClick={showUnanswered}				>
-				New Questions
-			</button>
-			<button className={!active ? 'btn btn-primary active' : 'btn btn-primary'} onClick={showAnswered}				>
-				Done
-			</button>
+			<h1 class="mb-4">Dashboard</h1>
+			<nav class="nav mb-3">
+				<a className={active ? 'nav-link active' : 'nav-link'} onClick={showUnanswered}>New Questions</a>
+				<a className={active ? 'nav-link active' : 'nav-link'} onClick={showAnswered}>Done</a>
+			</nav>
 			<ul className="list-unstyled">
 				{questionsToDisplay.length > 0 ? (
 					questionsToDisplay.map((q) => (
