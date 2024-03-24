@@ -24,19 +24,19 @@ git clone <repository_url>
 2. Navigate to the project directory:
 
 ```bash
-cd would-you-rather
+cd employee-polls
 ```
 
 3. Install dependencies using npm or yarn:
 
 ```bash
-npm install
+npm install react@17.0.2 react-dom@17.0.2
 ```
 
 or
 
 ```bash
-yarn install
+yarn install react@17.0.2 react-dom@17.0.2
 ```
 
 4. Start the development server:
@@ -80,16 +80,6 @@ The project's folder structure is as follows:
 - **reducers**: Contains Redux reducers for updating application state.
 - **utils**: Contains utility functions used within the application.
 - **tests**: Contains unit and integration tests for components and functionality.
-
-## Contributing
-
-Contributions to the "Employee Polls" application are welcome. If you would like to contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them with clear commit messages.
-4. Push your changes to your fork.
-5. Create a pull request detailing the changes you made and why they should be included.
 
 ---
 
