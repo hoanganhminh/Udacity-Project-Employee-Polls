@@ -5,6 +5,7 @@ This README file provides instructions on how to set up and run the "Employee Po
 ## Table of Contents
 
 - [Installation](#installation)
+- [Note for Compatibility and Testing](#note-for-compatibility-and-testing)
 - [Features](#features)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
@@ -50,6 +51,22 @@ yarn start
 ```
 
 5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the application.
+
+## Note for Compatibility and Testing
+
+If you encounter installation conflicts due to using an older version of Jest compared to React 18 (which you'll automatically receive with `npm install`), please delete the `node_modules` directory and install React 17.0.2 and React-DOM 17.0.2 using the following command:
+
+```bash
+npm install react@17.0.2 react-dom@17.0.2
+```
+
+Regarding testing, although the Udacity React Nanodegree specifies using `npm start test`, for this project, please use:
+
+```bash
+npm run test
+```
+
+This ensures compatibility and consistency with the project setup.
 
 ## Features
 
