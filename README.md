@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Application README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README file provides instructions on how to set up and run the "Employee Polls" application. This application allows users to create and answer polls with two options.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Features](#features)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To install and run the "Employee Polls" application, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository to your local machine:
 
-### `npm test`
+```bash
+git clone <repository_url>
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+```bash
+cd would-you-rather
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies using npm or yarn:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+or
 
-### `npm run eject`
+```bash
+yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+or
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+yarn start
+```
 
-## Learn More
+5. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to access the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The "Employee Polls" application includes the following features:
 
-### Code Splitting
+- User authentication: Users can log in by selecting their username.
+- Dashboard: Users can view unanswered polls on the dashboard.
+- Polls: Users can view and answer polls with two options.
+- Leaderboard: Users can view a leaderboard ranking based on the number of questions asked and answered.
+- New Poll: Users can create new polls with two options.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Usage
 
-### Analyzing the Bundle Size
+1. **Login**: On the login page, select your username from the dropdown list.
+2. **Dashboard**: After logging in, you will be directed to the dashboard where you can view unanswered polls. You can toggle between viewing unanswered and answered polls.
+3. **Polls**: Click on any poll to view the details and choose an option to vote.
+4. **New Poll**: Navigate to the "New" page to create a new poll by providing two options.
+5. **Leaderboard**: Access the leaderboard page to view users ranked based on their activity.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Folder Structure
 
-### Making a Progressive Web App
+The project's folder structure is as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **actions**: Contains Redux action creators for handling data and user actions.
+- **components**: Contains React components responsible for UI elements and pages.
+- **reducers**: Contains Redux reducers for updating application state.
+- **utils**: Contains utility functions used within the application.
+- **tests**: Contains unit and integration tests for components and functionality.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions to the "Employee Polls" application are welcome. If you would like to contribute, please follow these steps:
 
-### Deployment
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them with clear commit messages.
+4. Push your changes to your fork.
+5. Create a pull request detailing the changes you made and why they should be included.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using the "Employee Polls" application! If you encounter any issues or have suggestions for improvement, please don't hesitate to open an issue or contribute.

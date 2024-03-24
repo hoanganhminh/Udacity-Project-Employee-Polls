@@ -43,7 +43,7 @@ const NewPoll = (props) => {
 
 	return (
 		<div>
-			<h1 class="mb-4">Would you rather</h1>
+			<h1 className="mb-4">Would you rather</h1>
 			<form onSubmit={handlePollSubmit} className="poll-form">
 				<label htmlFor="optionOneText">First Option</label>
 				<input

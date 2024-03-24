@@ -14,6 +14,8 @@ function option(state = {}, action) {
         ...state,
         votes: votes.concat([authedUser]),
       };
+    default:
+      return state;
   }
 }
 
