@@ -1,4 +1,4 @@
-# Application README
+# Udacity-Project-Employee-Polls
 
 This README file provides instructions on how to set up and run the "Employee Polls" application. This application allows users to create and answer polls with two options.
 
