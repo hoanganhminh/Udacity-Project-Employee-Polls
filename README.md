@@ -8,8 +8,6 @@ This README file provides instructions on how to set up and run the "Employee Po
 - [Features](#features)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
